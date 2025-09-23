@@ -149,25 +149,68 @@
         .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
         .mobile-menu.active { transform: translateX(0); }
         
+        /* Mobile-specific improvements */
+        @media (max-width: 768px) {
+            .whitespace-nowrap { white-space: normal; }
+            .leading-tight { line-height: 1.1; }
+            .max-w-2xl { max-width: 100%; }
+            .glass { padding: 1rem !important; }
+            .rounded-2xl { border-radius: 1rem; }
+            .min-h-screen { min-height: 100vh; padding-top: 4rem; }
+        }
+        
         @media (max-width: 768px) {
             .floating { display: none; }
             .card-hover:hover { transform: none; }
-            .text-6xl { font-size: 3rem; }
-            .text-8xl { font-size: 4rem; }
-            .text-5xl { font-size: 2.5rem; }
-            .w-80 { width: 16rem; }
-            .h-80 { height: 16rem; }
-            .h-48 { height: 8rem; }
+            .text-6xl { font-size: 2.5rem !important; line-height: 1.2; }
+            .text-8xl { font-size: 3rem !important; }
+            .text-5xl { font-size: 2rem !important; }
+            .text-3xl { font-size: 1.8rem !important; }
+            .text-2xl { font-size: 1.5rem !important; }
+            .w-80 { width: 14rem; }
+            .h-80 { height: 14rem; }
+            .h-48 { height: 6rem; }
+            .px-8 { padding-left: 1rem; padding-right: 1rem; }
+            .py-20 { padding-top: 2rem; padding-bottom: 2rem; }
+            .py-12 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+            .gap-8 { gap: 1rem; }
+            .gap-12 { gap: 1.5rem; }
+            .mb-16 { margin-bottom: 2rem; }
+            .mb-12 { margin-bottom: 1.5rem; }
+            .mb-8 { margin-bottom: 1rem; }
+            /* Hide robot on mobile */
+            .lg\:grid-cols-2 { grid-template-columns: 1fr; }
+            .lg\:grid-cols-2 > div:last-child { display: none; }
         }
         
         @media (max-width: 480px) {
-            .text-6xl { font-size: 2.5rem; }
-            .text-8xl { font-size: 3rem; }
-            .text-5xl { font-size: 2rem; }
+            .text-6xl { font-size: 2rem !important; line-height: 1.1; }
+            .text-8xl { font-size: 2.5rem !important; }
+            .text-5xl { font-size: 1.8rem !important; }
+            .text-3xl { font-size: 1.5rem !important; }
+            .text-2xl { font-size: 1.3rem !important; }
+            .text-xl { font-size: 1.1rem !important; }
+            .text-lg { font-size: 1rem !important; }
             .w-80 { width: 12rem; }
             .h-80 { height: 12rem; }
-            .px-8 { padding-left: 1rem; padding-right: 1rem; }
-            .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
+            .px-8 { padding-left: 0.75rem; padding-right: 0.75rem; }
+            .px-6 { padding-left: 0.75rem; padding-right: 0.75rem; }
+            .px-4 { padding-left: 0.5rem; padding-right: 0.5rem; }
+            .py-20 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+            .py-12 { padding-top: 1rem; padding-bottom: 1rem; }
+            .py-8 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+            .py-6 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+            .py-4 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+            .gap-8 { gap: 0.75rem; }
+            .gap-6 { gap: 0.5rem; }
+            .mb-16 { margin-bottom: 1.5rem; }
+            .mb-12 { margin-bottom: 1rem; }
+            .mb-8 { margin-bottom: 0.75rem; }
+            .mb-6 { margin-bottom: 0.5rem; }
+            .mb-4 { margin-bottom: 0.5rem; }
+            .space-y-6 > * + * { margin-top: 0.75rem; }
+            .space-y-4 > * + * { margin-top: 0.5rem; }
+            .space-y-3 > * + * { margin-top: 0.5rem; }
         }
     </style>
 </head>
@@ -245,47 +288,47 @@
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative px-4 sm:px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full max-w-6xl z-10">
-            <div class="text-center">
+            <div class="text-center lg:text-left">
                 <div class="mb-8">
-                    <h1 class="text-6xl font-black mb-4 leading-tight whitespace-nowrap">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 leading-tight">
                         <span class="gradient-text typing font-mono uppercase tracking-wider text-shadow-glow animate-pulse neon-text">SANJEEVIKUMAR D</span>
                     </h1>
-                    <p class="text-2xl text-gray-300 mb-6 whitespace-nowrap">Cloud Architect • Full Stack Developer • Data Analyst</p>
-                    <p class="text-lg text-gray-400 max-w-2xl lg:max-w-none mb-8">
+                    <p class="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-6">Cloud Architect • Full Stack Developer • Data Analyst</p>
+                    <p class="text-base sm:text-lg text-gray-400 mb-8">
                         Crafting scalable cloud solutions and innovative applications with cutting-edge technology
                     </p>
                 </div>
                 
-                <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-                    <a href="#contact" class="bg-gradient-to-r from-purple-500 to-pink-500 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:scale-125 hover:shadow-2xl hover:shadow-purple-500/70 hover:-translate-y-2 hover:rotate-1 transition-all duration-500 glow text-center cursor-pointer">
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start mb-12">
+                    <a href="#contact" class="bg-gradient-to-r from-purple-500 to-pink-500 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:scale-110 lg:hover:scale-125 hover:shadow-2xl hover:shadow-purple-500/70 hover:-translate-y-2 hover:rotate-1 transition-all duration-500 glow text-center cursor-pointer">
                         Let's Connect
                     </a>
-                    <a href="#projects" class="border-2 border-purple-500 bg-gradient-to-r from-transparent to-purple-500/20 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:scale-125 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:shadow-2xl hover:shadow-blue-500/70 hover:-translate-y-2 hover:-rotate-1 transition-all duration-500 text-center cursor-pointer">
+                    <a href="#projects" class="border-2 border-purple-500 bg-gradient-to-r from-transparent to-purple-500/20 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:scale-110 lg:hover:scale-125 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:shadow-2xl hover:shadow-blue-500/70 hover:-translate-y-2 hover:-rotate-1 transition-all duration-500 text-center cursor-pointer">
                         View Projects
                     </a>
                 </div>
             </div>
             
-            <!-- 3D Robot Section -->
-            <div class="flex justify-center items-center">
+            <!-- 3D Robot Section - Hidden on mobile -->
+            <div class="hidden lg:flex justify-center items-center">
                 <div class="w-full h-96 max-w-md relative overflow-hidden rounded-2xl">
                     <spline-viewer url="https://prod.spline.design/ZUefC0JaXXbc2MRz/scene.splinecode" class="w-full h-full rounded-2xl"></spline-viewer>
                     <div class="absolute bottom-0 right-0 w-44 h-16 bg-black z-50 rounded-br-2xl"></div>
                 </div>
             </div>
 
-            <!-- Floating Tech Icons -->
-            <div class="hidden lg:block absolute top-20 right-10 floating">
+            <!-- Floating Tech Icons - Desktop only -->
+            <div class="hidden xl:block absolute top-20 right-10 floating">
                 <div class="glass p-4 rounded-lg">
                     <i class="fab fa-aws text-3xl text-orange-400"></i>
                 </div>
             </div>
-            <div class="hidden lg:block absolute top-60 right-20 floating" style="animation-delay: -2s;">
+            <div class="hidden xl:block absolute top-60 right-20 floating" style="animation-delay: -2s;">
                 <div class="glass p-4 rounded-lg">
                     <i class="fab fa-react text-3xl text-blue-400"></i>
                 </div>
             </div>
-            <div class="hidden lg:block absolute bottom-40 right-12 floating" style="animation-delay: -4s;">
+            <div class="hidden xl:block absolute bottom-40 right-12 floating" style="animation-delay: -4s;">
                 <div class="glass p-4 rounded-lg">
                     <i class="fab fa-docker text-3xl text-blue-500"></i>
                 </div>
@@ -320,15 +363,15 @@
                 
                 <div class="reveal">
                     <div class="relative">
-                        <div class="w-80 h-80 sm:w-96 sm:h-96 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1">
+                        <div class="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-pink-500 p-1">
                             <div class="w-full h-full rounded-full bg-black overflow-hidden">
                                 <img src="photo.jpg" alt="Sanjeevikumar D" class="w-full h-full object-cover rounded-full">
                             </div>
                         </div>
-                        <div class="hidden sm:block absolute -top-4 -right-4 glass p-4 rounded-lg floating">
+                        <div class="hidden lg:block absolute -top-4 -right-4 glass p-4 rounded-lg floating">
                             <i class="fas fa-cloud text-2xl text-blue-400"></i>
                         </div>
-                        <div class="hidden sm:block absolute -bottom-4 -left-4 glass p-4 rounded-lg floating" style="animation-delay: -3s;">
+                        <div class="hidden lg:block absolute -bottom-4 -left-4 glass p-4 rounded-lg floating" style="animation-delay: -3s;">
                             <i class="fas fa-code text-2xl text-green-400"></i>
                         </div>
                     </div>

@@ -25,17 +25,18 @@ function initThreeJS() {
         canvas: document.getElementById('three-canvas'), 
         alpha: true,
         antialias: false,
-        powerPreference: "high-performance"
+        powerPreference: window.innerWidth > 768 ? "high-performance" : "low-power"
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth > 768 ? 2 : 1));
 
-    // Energy streaks
+    // Energy streaks - reduced count for mobile
     const streakGeometry = new THREE.BufferGeometry();
     const streakVertices = [];
     const streakColors = [];
     
-    for (let i = 0; i < 200; i++) {
+    const particleCount = window.innerWidth > 768 ? 200 : 100;
+    for (let i = 0; i < particleCount; i++) {
         const angle = Math.random() * Math.PI * 2;
         const radius = 150 + Math.random() * 50;
         streakVertices.push(
@@ -52,10 +53,10 @@ function initThreeJS() {
     streakGeometry.setAttribute('color', new THREE.Float32BufferAttribute(streakColors, 3));
     
     const streakMaterial = new THREE.PointsMaterial({
-        size: 4,
+        size: window.innerWidth > 768 ? 4 : 2,
         vertexColors: true,
         transparent: true,
-        opacity: 0.9
+        opacity: window.innerWidth > 768 ? 0.9 : 0.7
     });
     
     streaks = new THREE.Points(streakGeometry, streakMaterial);
@@ -74,10 +75,11 @@ function animate() {
     requestAnimationFrame(animate);
     time += 0.016;
     
-    // Energy streaks movement
+    // Energy streaks movement - slower on mobile for better performance
     const positions = streaks.geometry.attributes.position.array;
+    const speed = window.innerWidth > 768 ? 15 : 8;
     for (let i = 0; i < positions.length; i += 3) {
-        positions[i + 2] += 15;
+        positions[i + 2] += speed;
         if (positions[i + 2] > 100) {
             positions[i + 2] = -2000;
         }
@@ -518,14 +520,15 @@ function removeSplineWatermark() {
 
 // Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
-    // Only initialize Three.js on larger screens for better performance
+    // Initialize Three.js for all devices with mobile optimizations
+    initThreeJS();
+    
+    // Desktop-only effects
     if (window.innerWidth > 768) {
-        initThreeJS();
         createTrail();
         initAdvancedEffects();
-    } else {
-        // Initialize a simpler background for mobile
-        initMobileBackground();
+        createFloatingParticles();
+        initMatrixRain();
     }
     
     initMobileNavigation();
@@ -533,8 +536,6 @@ document.addEventListener('DOMContentLoaded', () => {
     createScrollProgress();
     initHoverEffects();
     initTextRevealAnimations();
-    createFloatingParticles();
-    initMatrixRain();
 });
 
 // Additional hover effects
@@ -578,47 +579,7 @@ function initHoverEffects() {
     });
 }
 
-// Simple mobile background
-function initMobileBackground() {
-    const canvas = document.getElementById('three-canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    
-    const particles = [];
-    const particleCount = 50; // Reduced for mobile performance
-    
-    for (let i = 0; i < particleCount; i++) {
-        particles.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            vx: (Math.random() - 0.5) * 0.5,
-            vy: (Math.random() - 0.5) * 0.5,
-            size: Math.random() * 2 + 1
-        });
-    }
-    
-    function animateMobileBackground() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        particles.forEach(particle => {
-            particle.x += particle.vx;
-            particle.y += particle.vy;
-            
-            if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-            if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
-            
-            ctx.beginPath();
-            ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(102, 126, 234, ${0.3 + Math.random() * 0.3})`;
-            ctx.fill();
-        });
-        
-        requestAnimationFrame(animateMobileBackground);
-    }
-    
-    animateMobileBackground();
-}
+
 
 // Handle window resize
 window.addEventListener('resize', () => {
@@ -626,15 +587,7 @@ window.addEventListener('resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
-    }
-    
-    // Reinitialize background if switching between mobile/desktop
-    const canvas = document.getElementById('three-canvas');
-    if (window.innerWidth <= 768 && canvas.getContext) {
-        // Switch to mobile background if not already
-        if (!canvas.getContext('2d')) {
-            location.reload(); // Simple solution for demo
-        }
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth > 768 ? 2 : 1));
     }
 });
 

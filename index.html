@@ -149,14 +149,35 @@
         .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
         .mobile-menu.active { transform: translateX(0); }
         
+        /* Touch-friendly buttons */
+        @media (max-width: 768px) {
+            button, a { min-height: 44px; min-width: 44px; }
+            .nav-link { padding: 0.75rem 1rem; }
+        }
+        
+        /* Prevent horizontal scroll */
+        * { box-sizing: border-box; }
+        html, body { overflow-x: hidden; width: 100%; }
+        
+        /* Mobile viewport fix */
+        @media screen and (max-width: 768px) {
+            .min-h-screen { min-height: 100vh; min-height: -webkit-fill-available; }
+        }
+        
         /* Mobile-specific improvements */
         @media (max-width: 768px) {
+            body { font-size: 14px; }
+            .container { padding: 0 1rem; }
             .whitespace-nowrap { white-space: normal; }
             .leading-tight { line-height: 1.1; }
             .max-w-2xl { max-width: 100%; }
-            .glass { padding: 1rem !important; }
+            .glass { padding: 1rem !important; margin: 0.5rem; }
             .rounded-2xl { border-radius: 1rem; }
             .min-h-screen { min-height: 100vh; padding-top: 4rem; }
+            .grid { grid-template-columns: 1fr !important; }
+            .flex-col { gap: 1rem; }
+            .space-x-8 > * + * { margin-left: 0; margin-top: 0.5rem; }
+            .justify-between { flex-direction: column; align-items: flex-start; }
         }
         
         @media (max-width: 768px) {
@@ -167,9 +188,9 @@
             .text-5xl { font-size: 2rem !important; }
             .text-3xl { font-size: 1.8rem !important; }
             .text-2xl { font-size: 1.5rem !important; }
-            .w-80 { width: 14rem; }
-            .h-80 { height: 14rem; }
-            .h-48 { height: 6rem; }
+            .w-80 { width: 100%; max-width: 20rem; }
+            .h-80 { height: auto; min-height: 12rem; }
+            .h-48 { height: auto; min-height: 8rem; }
             .px-8 { padding-left: 1rem; padding-right: 1rem; }
             .py-20 { padding-top: 2rem; padding-bottom: 2rem; }
             .py-12 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
@@ -178,39 +199,45 @@
             .mb-16 { margin-bottom: 2rem; }
             .mb-12 { margin-bottom: 1.5rem; }
             .mb-8 { margin-bottom: 1rem; }
-            /* Hide robot on mobile */
             .lg\:grid-cols-2 { grid-template-columns: 1fr; }
             .lg\:grid-cols-2 > div:last-child { display: none; }
+            .md\:grid-cols-2 { grid-template-columns: 1fr; }
+            .md\:grid-cols-3 { grid-template-columns: 1fr; }
+            .md\:flex-row { flex-direction: column; }
+            .md\:text-left { text-align: center; }
         }
         
         @media (max-width: 480px) {
-            .text-6xl { font-size: 2rem !important; line-height: 1.1; }
-            .text-8xl { font-size: 2.5rem !important; }
-            .text-5xl { font-size: 1.8rem !important; }
-            .text-3xl { font-size: 1.5rem !important; }
-            .text-2xl { font-size: 1.3rem !important; }
-            .text-xl { font-size: 1.1rem !important; }
-            .text-lg { font-size: 1rem !important; }
-            .w-80 { width: 12rem; }
-            .h-80 { height: 12rem; }
-            .px-8 { padding-left: 0.75rem; padding-right: 0.75rem; }
-            .px-6 { padding-left: 0.75rem; padding-right: 0.75rem; }
-            .px-4 { padding-left: 0.5rem; padding-right: 0.5rem; }
-            .py-20 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-            .py-12 { padding-top: 1rem; padding-bottom: 1rem; }
-            .py-8 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-            .py-6 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-            .py-4 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-            .gap-8 { gap: 0.75rem; }
-            .gap-6 { gap: 0.5rem; }
-            .mb-16 { margin-bottom: 1.5rem; }
-            .mb-12 { margin-bottom: 1rem; }
-            .mb-8 { margin-bottom: 0.75rem; }
-            .mb-6 { margin-bottom: 0.5rem; }
-            .mb-4 { margin-bottom: 0.5rem; }
-            .space-y-6 > * + * { margin-top: 0.75rem; }
-            .space-y-4 > * + * { margin-top: 0.5rem; }
-            .space-y-3 > * + * { margin-top: 0.5rem; }
+            body { font-size: 12px; }
+            .text-6xl { font-size: 1.8rem !important; line-height: 1.1; }
+            .text-8xl { font-size: 2.2rem !important; }
+            .text-5xl { font-size: 1.6rem !important; }
+            .text-3xl { font-size: 1.4rem !important; }
+            .text-2xl { font-size: 1.2rem !important; }
+            .text-xl { font-size: 1rem !important; }
+            .text-lg { font-size: 0.9rem !important; }
+            .w-80 { width: 100%; max-width: 16rem; }
+            .h-80 { height: auto; min-height: 10rem; }
+            .px-8 { padding-left: 0.5rem; padding-right: 0.5rem; }
+            .px-6 { padding-left: 0.5rem; padding-right: 0.5rem; }
+            .px-4 { padding-left: 0.25rem; padding-right: 0.25rem; }
+            .py-20 { padding-top: 1rem; padding-bottom: 1rem; }
+            .py-12 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+            .py-8 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+            .py-6 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+            .py-4 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+            .gap-8 { gap: 0.5rem; }
+            .gap-6 { gap: 0.25rem; }
+            .mb-16 { margin-bottom: 1rem; }
+            .mb-12 { margin-bottom: 0.75rem; }
+            .mb-8 { margin-bottom: 0.5rem; }
+            .mb-6 { margin-bottom: 0.25rem; }
+            .mb-4 { margin-bottom: 0.25rem; }
+            .space-y-6 > * + * { margin-top: 0.5rem; }
+            .space-y-4 > * + * { margin-top: 0.25rem; }
+            .space-y-3 > * + * { margin-top: 0.25rem; }
+            .glass { padding: 0.75rem !important; margin: 0.25rem; }
+            .max-w-7xl { padding: 0 0.5rem; }
         }
     </style>
 </head>

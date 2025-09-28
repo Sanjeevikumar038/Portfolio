@@ -15,7 +15,8 @@ window.addEventListener('load', () => {
 });
 
 // Three.js Background
-let scene, camera, renderer, particles;
+let scene, camera, renderer, streaks;
+let time = 0;
 
 function initThreeJS() {
     scene = new THREE.Scene();
@@ -23,55 +24,77 @@ function initThreeJS() {
     renderer = new THREE.WebGLRenderer({ 
         canvas: document.getElementById('three-canvas'), 
         alpha: true,
-        antialias: false, // Disable for better mobile performance
+        antialias: false,
         powerPreference: "high-performance"
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio for performance
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // Create particles (reduced count for better performance)
-    const geometry = new THREE.BufferGeometry();
-    const vertices = [];
-    const colors = [];
-    const particleCount = window.innerWidth > 1200 ? 3000 : 1500; // Adaptive particle count
-
-    for (let i = 0; i < particleCount; i++) {
-        vertices.push(
-            (Math.random() - 0.5) * 2000,
-            (Math.random() - 0.5) * 2000,
-            (Math.random() - 0.5) * 2000
+    // Energy streaks
+    const streakGeometry = new THREE.BufferGeometry();
+    const streakVertices = [];
+    const streakColors = [];
+    
+    for (let i = 0; i < 200; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const radius = 150 + Math.random() * 50;
+        streakVertices.push(
+            Math.cos(angle) * radius,
+            Math.sin(angle) * radius,
+            -Math.random() * 2000
         );
         
-        colors.push(
-            Math.random() * 0.5 + 0.5,
-            Math.random() * 0.5 + 0.5,
-            1
-        );
+        const hue = Math.random() > 0.5 ? 0.6 : 0.8;
+        streakColors.push(hue, 0.8, 1);
     }
-
-    geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-    geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-
-    const material = new THREE.PointsMaterial({
-        size: window.innerWidth > 768 ? 2 : 1.5,
+    
+    streakGeometry.setAttribute('position', new THREE.Float32BufferAttribute(streakVertices, 3));
+    streakGeometry.setAttribute('color', new THREE.Float32BufferAttribute(streakColors, 3));
+    
+    const streakMaterial = new THREE.PointsMaterial({
+        size: 4,
         vertexColors: true,
         transparent: true,
-        opacity: 0.8
+        opacity: 0.9
     });
+    
+    streaks = new THREE.Points(streakGeometry, streakMaterial);
+    scene.add(streaks);
 
-    particles = new THREE.Points(geometry, material);
-    scene.add(particles);
 
-    camera.position.z = 1000;
+
+
+
+    camera.position.z = 0;
 
     animate();
 }
 
 function animate() {
     requestAnimationFrame(animate);
+    time += 0.016;
     
-    particles.rotation.x += 0.0005;
-    particles.rotation.y += 0.001;
+    // Energy streaks movement
+    const positions = streaks.geometry.attributes.position.array;
+    for (let i = 0; i < positions.length; i += 3) {
+        positions[i + 2] += 15;
+        if (positions[i + 2] > 100) {
+            positions[i + 2] = -2000;
+        }
+    }
+    streaks.geometry.attributes.position.needsUpdate = true;
+    
+    // Color pulsing for streaks
+    const colors = streaks.geometry.attributes.color.array;
+    for (let i = 0; i < colors.length; i += 3) {
+        const pulse = Math.sin(time * 3 + i * 0.1) * 0.5 + 0.5;
+        colors[i] = 0.2 + pulse * 0.6;
+    }
+    streaks.geometry.attributes.color.needsUpdate = true;
+    
+
+    
+
     
     renderer.render(scene, camera);
 }
@@ -95,6 +118,36 @@ function initAnimations() {
     };
     
     setTimeout(typeWriter, 1000);
+    
+    // Counter animation
+    const counters = document.querySelectorAll('.counter-number');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 20;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current) + '+';
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + '+';
+                    }
+                };
+                
+                updateCounter();
+                counterObserver.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
 
     // Scroll-triggered animations
     gsap.utils.toArray('.reveal').forEach((element) => {

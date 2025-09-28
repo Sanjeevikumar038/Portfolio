@@ -290,10 +290,10 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full max-w-6xl z-10">
             <div class="text-center lg:text-left">
                 <div class="mb-8">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 leading-tight">
-                        <span class="gradient-text typing font-mono uppercase tracking-wider text-shadow-glow animate-pulse neon-text">SANJEEVIKUMAR D</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-24 leading-tight">
+                        <span class="gradient-text typing font-mono uppercase tracking-wider text-shadow-glow animate-pulse neon-text">SANJEEVIKUMAR </span>
                     </h1>
-                    <p class="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-6">Cloud Architect • Full Stack Developer • Data Analyst</p>
+                    <p class="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-6 whitespace-nowrap">Cloud Architect • Full Stack Developer • Data Analyst</p>
                     <p class="text-base sm:text-lg text-gray-400 mb-8">
                         Crafting scalable cloud solutions and innovative applications with cutting-edge technology
                     </p>
@@ -328,7 +328,7 @@
                     <i class="fab fa-react text-3xl text-blue-400"></i>
                 </div>
             </div>
-            <div class="hidden xl:block absolute bottom-40 right-12 floating" style="animation-delay: -4s;">
+            <div class="hidden xl:block absolute bottom-20 right-12 floating" style="animation-delay: -4s;">
                 <div class="glass p-4 rounded-lg">
                     <i class="fab fa-docker text-3xl text-blue-500"></i>
                 </div>
@@ -338,6 +338,12 @@
 
     <!-- About Section -->
     <section id="about" class="py-12 sm:py-20 relative">
+        <!-- Additional floating icon -->
+        <div class="hidden xl:block absolute top-32 left-16 floating" style="animation-delay: -3s;">
+            <div class="glass p-4 rounded-lg">
+                <i class="fab fa-python text-3xl text-yellow-400"></i>
+            </div>
+        </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-12 sm:mb-16">
                 <h2 class="text-3xl sm:text-5xl font-bold gradient-text mb-4">About Me</h2>
@@ -347,11 +353,22 @@
             <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
                 <div class="reveal">
                     <div class="glass p-6 sm:p-8 rounded-2xl">
-                        <h3 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 gradient-text">Cloud Enthusiast</h3>
+                        <h3 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 gradient-text">Passionate Developer & Problem Solver</h3>
                         <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
-                            I'm a passionate cloud professional with expertise in AWS, Azure, and GCP. 
-                            I love building scalable applications and solving complex problems with innovative solutions.
+                            M.Tech student specializing in cloud architecture and full-stack development. 
+                            Experienced in Spring Boot, React, and cloud platforms with a passion for 
+                            building scalable solutions and learning cutting-edge technologies.
                         </p>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div class="text-center counter">
+                                <div class="text-xl font-bold text-purple-400 counter-number" data-target="4">0+</div>
+                                <div class="text-gray-400 text-sm">Certifications</div>
+                            </div>
+                            <div class="text-center counter">
+                                <div class="text-xl font-bold text-blue-400 counter-number" data-target="2">0+</div>
+                                <div class="text-gray-400 text-sm">Projects Built</div>
+                            </div>
+                        </div>
                         <div class="flex justify-center">
                             <div class="text-center">
                                 <div class="text-2xl sm:text-3xl font-bold gradient-text">Student</div>
@@ -392,13 +409,13 @@
                 <!-- Programming -->
                 <div class="glass p-4 sm:p-6 rounded-2xl card-hover reveal">
                     <div class="text-center mb-4 sm:mb-6">
-                        <i class="fas fa-code text-3xl sm:text-4xl text-purple-400 mb-3 sm:mb-4"></i>
+                        <i class="fas fa-code text-3xl sm:text-4xl text-purple-400 mb-3 sm:mb-4 hover:animate-spin transition-transform duration-500"></i>
                         <h3 class="text-lg sm:text-xl font-bold">Programming</h3>
                     </div>
                     <div class="flex flex-wrap gap-2 sm:gap-3 justify-center">
-                        <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm hover:scale-110 transition-transform cursor-pointer">Java</span>
-                        <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm hover:scale-110 transition-transform cursor-pointer">Python</span>
-                        <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm hover:scale-110 transition-transform cursor-pointer">C</span>
+                        <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm hover:scale-110 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 cursor-pointer">Java</span>
+                        <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm hover:scale-110 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 cursor-pointer">Python</span>
+                        <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm hover:scale-110 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 cursor-pointer">C</span>
                     </div>
                 </div>
 
@@ -410,6 +427,7 @@
                     </div>
                     <div class="flex flex-wrap gap-2 sm:gap-3 justify-center">
                         <span class="bg-blue-500 bg-opacity-20 text-blue-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm hover:scale-110 transition-transform cursor-pointer">React</span>
+                        <span class="bg-green-500 bg-opacity-20 text-green-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm hover:scale-110 transition-transform cursor-pointer">Spring Boot</span>
                         <span class="bg-blue-500 bg-opacity-20 text-blue-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm hover:scale-110 transition-transform cursor-pointer">JavaScript</span>
                     </div>
                 </div>
@@ -427,7 +445,7 @@
                     </div>
                 </div>
 
-                <!-- Tools -->
+                <!-- Tools & Database -->
                 <div class="glass p-4 sm:p-6 rounded-2xl card-hover reveal">
                     <div class="text-center mb-4 sm:mb-6">
                         <i class="fas fa-tools text-3xl sm:text-4xl text-orange-400 mb-3 sm:mb-4"></i>
@@ -435,8 +453,9 @@
                     </div>
                     <div class="flex flex-wrap gap-2 sm:gap-3 justify-center">
                         <span class="bg-orange-500 bg-opacity-20 text-orange-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm hover:scale-110 transition-transform cursor-pointer">MySQL</span>
+                        <span class="bg-green-500 bg-opacity-20 text-green-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm hover:scale-110 transition-transform cursor-pointer">MongoDB</span>
                         <span class="bg-orange-500 bg-opacity-20 text-orange-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm hover:scale-110 transition-transform cursor-pointer">VS Code</span>
-                        <span class="bg-orange-500 bg-opacity-20 text-orange-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm hover:scale-110 transition-transform cursor-pointer">GitHub</span>
+                        <span class="bg-blue-500 bg-opacity-20 text-blue-300 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm hover:scale-110 transition-transform cursor-pointer">Git</span>
                     </div>
                 </div>
             </div>
@@ -447,63 +466,93 @@
     <section id="education" class="py-12 sm:py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-12 sm:mb-16">
-                <h2 class="text-3xl sm:text-5xl font-bold gradient-text mb-4">Education</h2>
-                <p class="text-lg sm:text-xl text-gray-400">Academic journey and achievements</p>
+                <h2 class="text-3xl sm:text-5xl font-bold gradient-text mb-4">Education & Certifications</h2>
+                <p class="text-lg sm:text-xl text-gray-400">Academic journey and professional achievements</p>
             </div>
             
-            <div class="max-w-4xl mx-auto">
-                <div class="relative">
-                    <!-- Timeline line -->
-                    <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500 rounded-full hidden md:block"></div>
-                    
-                    <!-- Education Item 1 -->
-                    <div class="reveal mb-12 md:mb-16">
-                        <div class="flex flex-col md:flex-row items-center">
-                            <div class="md:w-1/2 md:pr-8 mb-6 md:mb-0">
-                                <div class="glass p-6 sm:p-8 rounded-2xl">
-                                    <div class="flex items-center mb-4">
-                                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-full mr-4">
-                                            <i class="fas fa-graduation-cap text-white text-xl"></i>
-                                        </div>
-                                        <div>
-                                            <h3 class="text-xl sm:text-2xl font-bold text-white">M.Tech in Computer Science (Integrated)</h3>
-                                            <p class="text-purple-300 font-semibold">Sri Krishna College of Engineering and Technology</p>
-                                        </div>
-                                    </div>
-                                    <div class="mb-4">
-                                        <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm font-medium">
-                                            2023 - 2028
-                                        </span>
-                                        <span class="bg-green-500 bg-opacity-20 text-green-300 px-3 py-1 rounded-full text-sm font-medium ml-2">
-                                            CGPA: 8.4
-                                        </span>
-                                    </div>
-                                    <p class="text-gray-300 text-sm sm:text-base">
-                                        Specializing in advanced computer science concepts including cloud computing, 
-                                        data structures, algorithms, and software engineering principles.
-                                    </p>
-                                </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+                <!-- Education Section -->
+                <div class="reveal">
+                    <h3 class="text-2xl sm:text-3xl font-bold gradient-text mb-6 text-center lg:text-left">Education</h3>
+                    <div class="glass p-6 sm:p-8 rounded-2xl">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-full mr-4">
+                                <i class="fas fa-graduation-cap text-white text-xl"></i>
                             </div>
-                            
-                            <!-- Timeline dot -->
-                            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full border-4 border-black"></div>
-                            
-                            <div class="md:w-1/2 md:pl-8">
-                                <div class="text-center md:text-left">
-                                    <div class="inline-flex items-center gap-3 mb-4">
-                                        <span class="bg-blue-500 bg-opacity-20 text-blue-300 px-3 py-1 rounded-full text-sm">
-                                            <i class="fas fa-map-marker-alt mr-1"></i>Coimbatore, Tamil Nadu
-                                        </span>
-                                    </div>
-                                    <div class="flex flex-wrap gap-2 justify-center md:justify-start">
-                                        <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-xs">Data Structures</span>
-                                        <span class="bg-blue-500 bg-opacity-20 text-blue-300 px-3 py-1 rounded-full text-xs">Algorithms</span>
-                                        <span class="bg-green-500 bg-opacity-20 text-green-300 px-3 py-1 rounded-full text-xs">Cloud Computing</span>
-                                        <span class="bg-yellow-500 bg-opacity-20 text-yellow-300 px-3 py-1 rounded-full text-xs">Software Engineering</span>
-                                        <span class="bg-pink-500 bg-opacity-20 text-pink-300 px-3 py-1 rounded-full text-xs">Database Systems</span>
-                                    </div>
-                                </div>
+                            <div>
+                                <h4 class="text-lg sm:text-xl font-bold text-white">M.Tech in Computer Science (Integrated)</h4>
+                                <p class="text-purple-300 font-semibold">Sri Krishna College of Engineering and Technology</p>
                             </div>
+                        </div>
+                        <div class="mb-4">
+                            <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-sm font-medium">
+                                2023 - 2028
+                            </span>
+                            <span class="bg-green-500 bg-opacity-20 text-green-300 px-3 py-1 rounded-full text-sm font-medium ml-2">
+                                CGPA: 8.4
+                            </span>
+                        </div>
+                        <p class="text-gray-300 text-sm sm:text-base mb-4">
+                            Specializing in advanced computer science concepts including cloud computing, 
+                            data structures, algorithms, and software engineering principles.
+                        </p>
+                        <div class="mb-4">
+                            <span class="bg-blue-500 bg-opacity-20 text-blue-300 px-3 py-1 rounded-full text-sm">
+                                <i class="fas fa-map-marker-alt mr-1"></i>Coimbatore, Tamil Nadu
+                            </span>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-xs">Data Structures</span>
+                            <span class="bg-blue-500 bg-opacity-20 text-blue-300 px-3 py-1 rounded-full text-xs">Algorithms</span>
+                            <span class="bg-green-500 bg-opacity-20 text-green-300 px-3 py-1 rounded-full text-xs">Cloud Computing</span>
+                            <span class="bg-yellow-500 bg-opacity-20 text-yellow-300 px-3 py-1 rounded-full text-xs">Software Engineering</span>
+                            <span class="bg-pink-500 bg-opacity-20 text-pink-300 px-3 py-1 rounded-full text-xs">Database Systems</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certifications Section -->
+                <div class="reveal">
+                    <h3 class="text-2xl sm:text-3xl font-bold gradient-text mb-6 text-center lg:text-left">Professional Certifications</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Certification 1 -->
+                        <div class="glass p-4 rounded-2xl card-hover text-center">
+                            <div class="bg-gradient-to-r from-blue-500 to-cyan-500 p-2 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                                <i class="fas fa-network-wired text-white text-lg"></i>
+                            </div>
+                            <h4 class="text-sm font-bold mb-1">Networking Basics</h4>
+                            <p class="text-xs text-gray-400 mb-2">Cisco Networking Academy</p>
+                            <span class="bg-blue-500 bg-opacity-20 text-blue-300 px-2 py-1 rounded-full text-xs">2025</span>
+                        </div>
+                        
+                        <!-- Certification 2 -->
+                        <div class="glass p-4 rounded-2xl card-hover text-center">
+                            <div class="bg-gradient-to-r from-orange-500 to-red-500 p-2 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                                <i class="fab fa-java text-white text-lg"></i>
+                            </div>
+                            <h4 class="text-sm font-bold mb-1">Data Structures & Algorithms Using Java</h4>
+                            <p class="text-xs text-gray-400 mb-2">Infosys Springboard</p>
+                            <span class="bg-orange-500 bg-opacity-20 text-orange-300 px-2 py-1 rounded-full text-xs">2024</span>
+                        </div>
+                        
+                        <!-- Certification 3 -->
+                        <div class="glass p-4 rounded-2xl card-hover text-center">
+                            <div class="bg-gradient-to-r from-green-500 to-emerald-500 p-2 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                                <i class="fas fa-chart-bar text-white text-lg"></i>
+                            </div>
+                            <h4 class="text-sm font-bold mb-1">Data Analytics</h4>
+                            <p class="text-xs text-gray-400 mb-2">NoviTech R&D Pvt Ltd</p>
+                            <span class="bg-green-500 bg-opacity-20 text-green-300 px-2 py-1 rounded-full text-xs">2025</span>
+                        </div>
+                        
+                        <!-- Certification 4 -->
+                        <div class="glass p-4 rounded-2xl card-hover text-center">
+                            <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-2 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                                <i class="fab fa-python text-white text-lg"></i>
+                            </div>
+                            <h4 class="text-sm font-bold mb-1">Python 101 for Data Science</h4>
+                            <p class="text-xs text-gray-400 mb-2">IBM</p>
+                            <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-2 py-1 rounded-full text-xs">2024</span>
                         </div>
                     </div>
                 </div>

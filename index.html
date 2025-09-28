@@ -83,8 +83,8 @@
         .glow { box-shadow: 0 0 50px rgba(102, 126, 234, 0.3); }
         .text-shadow { text-shadow: 0 0 30px rgba(102, 126, 234, 0.5); }
         #three-canvas { position: fixed; top: 0; left: 0; z-index: -1; }
-        .floating { animation: float 8s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-30px) rotate(5deg); } }
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-20px) rotate(3deg); } }
         .typing::after { content: '|'; animation: blink 1s infinite; }
         @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
         .morphing-bg { background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c, #00f5ff, #fc00ff); background-size: 600% 600%; animation: gradient 20s ease infinite; }
@@ -200,7 +200,6 @@
             .mb-12 { margin-bottom: 1.5rem; }
             .mb-8 { margin-bottom: 1rem; }
             .lg\:grid-cols-2 { grid-template-columns: 1fr; }
-            .lg\:grid-cols-2 > div:last-child { display: none; }
             .md\:grid-cols-2 { grid-template-columns: 1fr; }
             .md\:grid-cols-3 { grid-template-columns: 1fr; }
             .md\:flex-row { flex-direction: column; }
@@ -350,8 +349,8 @@
                     <i class="fab fa-aws text-3xl text-orange-400"></i>
                 </div>
             </div>
-            <div class="hidden xl:block absolute top-60 right-20 floating" style="animation-delay: -2s;">
-                <div class="glass p-4 rounded-lg">
+            <div class="hidden lg:block absolute top-1/2 right-16 floating" style="animation-delay: -2s; animation-duration: 4s;">
+                <div class="glass p-4 rounded-lg flex items-center justify-center">
                     <i class="fab fa-react text-3xl text-blue-400"></i>
                 </div>
             </div>
@@ -541,45 +540,61 @@
                 <!-- Certifications Section -->
                 <div class="reveal">
                     <h3 class="text-2xl sm:text-3xl font-bold gradient-text mb-6 text-center lg:text-left">Professional Certifications</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 gap-4">
                         <!-- Certification 1 -->
-                        <div class="glass p-4 rounded-2xl card-hover text-center">
-                            <div class="bg-gradient-to-r from-blue-500 to-cyan-500 p-2 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                                <i class="fas fa-network-wired text-white text-lg"></i>
+                        <div class="glass p-4 rounded-2xl card-hover">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-gradient-to-r from-blue-500 to-cyan-500 p-3 rounded-full flex-shrink-0">
+                                    <i class="fas fa-network-wired text-white text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-base font-bold mb-1">Networking Basics</h4>
+                                    <p class="text-sm text-gray-400 mb-2">Cisco Networking Academy</p>
+                                    <span class="bg-blue-500 bg-opacity-20 text-blue-300 px-3 py-1 rounded-full text-xs">2025</span>
+                                </div>
                             </div>
-                            <h4 class="text-sm font-bold mb-1">Networking Basics</h4>
-                            <p class="text-xs text-gray-400 mb-2">Cisco Networking Academy</p>
-                            <span class="bg-blue-500 bg-opacity-20 text-blue-300 px-2 py-1 rounded-full text-xs">2025</span>
                         </div>
                         
                         <!-- Certification 2 -->
-                        <div class="glass p-4 rounded-2xl card-hover text-center">
-                            <div class="bg-gradient-to-r from-orange-500 to-red-500 p-2 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                                <i class="fab fa-java text-white text-lg"></i>
+                        <div class="glass p-4 rounded-2xl card-hover">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-gradient-to-r from-orange-500 to-red-500 p-3 rounded-full flex-shrink-0">
+                                    <i class="fab fa-java text-white text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-base font-bold mb-1">Data Structures & Algorithms Using Java</h4>
+                                    <p class="text-sm text-gray-400 mb-2">Infosys Springboard</p>
+                                    <span class="bg-orange-500 bg-opacity-20 text-orange-300 px-3 py-1 rounded-full text-xs">2024</span>
+                                </div>
                             </div>
-                            <h4 class="text-sm font-bold mb-1">Data Structures & Algorithms Using Java</h4>
-                            <p class="text-xs text-gray-400 mb-2">Infosys Springboard</p>
-                            <span class="bg-orange-500 bg-opacity-20 text-orange-300 px-2 py-1 rounded-full text-xs">2024</span>
                         </div>
                         
                         <!-- Certification 3 -->
-                        <div class="glass p-4 rounded-2xl card-hover text-center">
-                            <div class="bg-gradient-to-r from-green-500 to-emerald-500 p-2 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                                <i class="fas fa-chart-bar text-white text-lg"></i>
+                        <div class="glass p-4 rounded-2xl card-hover">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-gradient-to-r from-green-500 to-emerald-500 p-3 rounded-full flex-shrink-0">
+                                    <i class="fas fa-chart-bar text-white text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-base font-bold mb-1">Data Analytics</h4>
+                                    <p class="text-sm text-gray-400 mb-2">NoviTech R&D Pvt Ltd</p>
+                                    <span class="bg-green-500 bg-opacity-20 text-green-300 px-3 py-1 rounded-full text-xs">2025</span>
+                                </div>
                             </div>
-                            <h4 class="text-sm font-bold mb-1">Data Analytics</h4>
-                            <p class="text-xs text-gray-400 mb-2">NoviTech R&D Pvt Ltd</p>
-                            <span class="bg-green-500 bg-opacity-20 text-green-300 px-2 py-1 rounded-full text-xs">2025</span>
                         </div>
                         
                         <!-- Certification 4 -->
-                        <div class="glass p-4 rounded-2xl card-hover text-center">
-                            <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-2 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                                <i class="fab fa-python text-white text-lg"></i>
+                        <div class="glass p-4 rounded-2xl card-hover">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-full flex-shrink-0">
+                                    <i class="fab fa-python text-white text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-base font-bold mb-1">Python 101 for Data Science</h4>
+                                    <p class="text-sm text-gray-400 mb-2">IBM</p>
+                                    <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-3 py-1 rounded-full text-xs">2024</span>
+                                </div>
                             </div>
-                            <h4 class="text-sm font-bold mb-1">Python 101 for Data Science</h4>
-                            <p class="text-xs text-gray-400 mb-2">IBM</p>
-                            <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-2 py-1 rounded-full text-xs">2024</span>
                         </div>
                     </div>
                 </div>
@@ -660,51 +675,45 @@
                 <p class="text-lg sm:text-xl text-gray-400">Ready to start your next project?</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+            <div class="grid grid-cols-1 gap-8">
                 <div class="reveal reveal-1">
                     <div class="glass p-6 sm:p-8 rounded-2xl">
                         <h3 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 reveal reveal-2">Get In Touch</h3>
-                        <div class="space-y-4 sm:space-y-6">
-                            <div class="flex items-center space-x-3 sm:space-x-4 reveal reveal-3">
-                                <div class="bg-purple-500 p-2 sm:p-3 rounded-full flex-shrink-0">
-                                    <i class="fas fa-envelope text-white text-sm sm:text-base"></i>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6">
+                            <div class="text-center reveal reveal-3">
+                                <div class="bg-purple-500 p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                                    <i class="fas fa-envelope text-white"></i>
                                 </div>
-                                <div class="min-w-0">
-                                    <div class="font-semibold text-sm sm:text-base">Email</div>
-                                    <div class="text-gray-400 text-xs sm:text-sm break-all">sanjeevikumardhanapal2005@gmail.com</div>
-                                </div>
+                                <div class="font-semibold text-sm">Email</div>
+                                <div class="text-gray-400 text-xs break-all">sanjeevikumardhanapal2005@gmail.com</div>
                             </div>
-                            <div class="flex items-center space-x-3 sm:space-x-4 reveal reveal-4">
-                                <div class="bg-green-500 p-2 sm:p-3 rounded-full flex-shrink-0">
-                                    <i class="fas fa-phone text-white text-sm sm:text-base"></i>
+                            <div class="text-center reveal reveal-4">
+                                <div class="bg-green-500 p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                                    <i class="fas fa-phone text-white"></i>
                                 </div>
-                                <div>
-                                    <div class="font-semibold text-sm sm:text-base">Phone</div>
-                                    <div class="text-gray-400 text-xs sm:text-sm">+91 90422 20464</div>
-                                </div>
+                                <div class="font-semibold text-sm">Phone</div>
+                                <div class="text-gray-400 text-xs">+91 90422 20464</div>
                             </div>
-                            <div class="flex items-center space-x-3 sm:space-x-4 reveal reveal-5">
-                                <div class="bg-blue-500 p-2 sm:p-3 rounded-full flex-shrink-0">
-                                    <i class="fas fa-map-marker-alt text-white text-sm sm:text-base"></i>
+                            <div class="text-center reveal reveal-5">
+                                <div class="bg-blue-500 p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
                                 </div>
-                                <div>
-                                    <div class="font-semibold text-sm sm:text-base">Location</div>
-                                    <div class="text-gray-400 text-xs sm:text-sm">Coimbatore, Tamil Nadu</div>
-                                </div>
+                                <div class="font-semibold text-sm">Location</div>
+                                <div class="text-gray-400 text-xs">Coimbatore, Tamil Nadu</div>
                             </div>
                         </div>
                         
-                        <div class="mt-6 sm:mt-8 reveal reveal-6">
+                        <div class="text-center reveal reveal-6">
                             <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Follow Me</h4>
-                            <div class="flex space-x-3 sm:space-x-4">
-                                <a href="https://www.linkedin.com/in/sanjeevikumar-d" class="bg-blue-600 p-2 sm:p-3 rounded-full hover:scale-110 transition-transform">
-                                    <i class="fab fa-linkedin text-white text-sm sm:text-base"></i>
+                            <div class="flex justify-center space-x-4">
+                                <a href="https://www.linkedin.com/in/sanjeevikumar-d" class="bg-blue-600 p-3 rounded-full hover:scale-110 transition-transform">
+                                    <i class="fab fa-linkedin text-white text-lg"></i>
                                 </a>
-                                <a href="https://github.com/Sanjeevikumar038" class="bg-gray-800 p-2 sm:p-3 rounded-full hover:scale-110 transition-transform">
-                                    <i class="fab fa-github text-white text-sm sm:text-base"></i>
+                                <a href="https://github.com/Sanjeevikumar038" class="bg-gray-800 p-3 rounded-full hover:scale-110 transition-transform">
+                                    <i class="fab fa-github text-white text-lg"></i>
                                 </a>
-                                <a href="https://leetcode.com/u/Sanjeevikumar05/" class="bg-orange-500 p-2 sm:p-3 rounded-full hover:scale-110 transition-transform">
-                                    <i class="fas fa-code text-white text-sm sm:text-base"></i>
+                                <a href="https://leetcode.com/u/Sanjeevikumar05/" class="bg-orange-500 p-3 rounded-full hover:scale-110 transition-transform">
+                                    <i class="fas fa-code text-white text-lg"></i>
                                 </a>
                             </div>
                         </div>
@@ -718,20 +727,23 @@
                             <p class="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">Contact me through email, phone, or social media for the fastest response!</p>
                         </div>
                         
-                        <div class="space-y-3 sm:space-y-4">
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sanjeevikumardhanapal2005@gmail.com&su=Portfolio%20Contact&body=Hi%20Sanjeevikumar,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect!%0D%0A%0D%0ABest%20regards" target="_blank" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 py-3 rounded-lg font-semibold hover:scale-105 transition-all duration-75 flex items-center justify-center gap-2 text-sm sm:text-base reveal reveal-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sanjeevikumardhanapal2005@gmail.com&su=Portfolio%20Contact&body=Hi%20Sanjeevikumar,%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect!%0D%0A%0D%0ABest%20regards" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 py-3 px-4 rounded-lg font-semibold hover:scale-105 transition-all duration-75 flex items-center justify-center gap-2 text-sm reveal reveal-4">
                                 <i class="fab fa-google"></i>
-                                Send email
+                                <span class="hidden sm:inline">Send Email</span>
+                                <span class="sm:hidden">Email</span>
                             </a>
                             
-                            <a href="https://api.whatsapp.com/send?phone=919042220464&text=Hi%20Sanjeevikumar%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect%21" target="_blank" class="w-full bg-gradient-to-r from-green-500 to-emerald-500 py-3 rounded-lg font-semibold hover:scale-105 transition-all duration-75 flex items-center justify-center gap-2 text-sm sm:text-base reveal reveal-5">
+                            <a href="https://api.whatsapp.com/send?phone=919042220464&text=Hi%20Sanjeevikumar%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect%21" target="_blank" class="bg-gradient-to-r from-green-500 to-emerald-500 py-3 px-4 rounded-lg font-semibold hover:scale-105 transition-all duration-75 flex items-center justify-center gap-2 text-sm reveal reveal-5">
                                 <i class="fab fa-whatsapp"></i>
-                                WhatsApp Me
+                                <span class="hidden sm:inline">WhatsApp</span>
+                                <span class="sm:hidden">Chat</span>
                             </a>
                             
-                            <a href="https://www.linkedin.com/messaging/compose/?recipient=sanjeevikumar-d" target="_blank" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 py-3 rounded-lg font-semibold hover:scale-105 transition-all duration-75 flex items-center justify-center gap-2 text-sm sm:text-base reveal reveal-6">
+                            <a href="https://www.linkedin.com/messaging/compose/?recipient=sanjeevikumar-d" target="_blank" class="bg-gradient-to-r from-blue-500 to-cyan-500 py-3 px-4 rounded-lg font-semibold hover:scale-105 transition-all duration-75 flex items-center justify-center gap-2 text-sm reveal reveal-6">
                                 <i class="fab fa-linkedin"></i>
-                                LinkedIn Message
+                                <span class="hidden sm:inline">LinkedIn</span>
+                                <span class="sm:hidden">Connect</span>
                             </a>
                         </div>
                     </div>

@@ -536,7 +536,31 @@ document.addEventListener('DOMContentLoaded', () => {
     createScrollProgress();
     initHoverEffects();
     initTextRevealAnimations();
+    initHomeButtonToggle();
 });
+
+// Show/hide Home button based on scroll position
+function initHomeButtonToggle() {
+    const homeNav = document.getElementById('home-nav');
+    const homeNavMobile = document.getElementById('home-nav-mobile');
+    const homeSection = document.getElementById('home');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Hide Home button when in home section
+                homeNav.classList.add('hidden');
+                homeNavMobile.classList.add('hidden');
+            } else {
+                // Show Home button when not in home section
+                homeNav.classList.remove('hidden');
+                homeNavMobile.classList.remove('hidden');
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    observer.observe(homeSection);
+}
 
 // Additional hover effects
 function initHoverEffects() {

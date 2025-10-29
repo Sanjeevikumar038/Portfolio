@@ -260,21 +260,12 @@
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-white hover:text-purple-400 transition-colors cursor-pointer">Home</a>
+                    <a href="#home" id="home-nav" class="nav-link text-white hover:text-purple-400 transition-colors cursor-pointer hidden">Home</a>
                     <a href="#about" class="nav-link text-white hover:text-purple-400 transition-colors cursor-pointer">About</a>
                     <a href="#skills" class="nav-link text-white hover:text-purple-400 transition-colors cursor-pointer">Skills</a>
                     <a href="#education" class="nav-link text-white hover:text-purple-400 transition-colors cursor-pointer">Education</a>
                     <a href="#projects" class="nav-link text-white hover:text-purple-400 transition-colors cursor-pointer">Projects</a>
                     <a href="#contact" class="nav-link text-white hover:text-purple-400 transition-colors cursor-pointer">Contact</a>
-                    <a href="https://github.com/Sanjeevikumar038" target="_blank" class="text-white hover:text-purple-400 transition-colors">
-                        <i class="fab fa-github text-lg"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/sanjeevikumar-d" target="_blank" class="text-white hover:text-purple-400 transition-colors">
-                        <i class="fab fa-linkedin text-lg"></i>
-                    </a>
-                    <a href="https://leetcode.com/u/Sanjeevikumar05/" target="_blank" class="text-white hover:text-purple-400 transition-colors">
-                        <i class="fas fa-code text-lg"></i>
-                    </a>
                     <a href="resume.pdf" download="Sanjeevikumar_D_Resume.pdf" id="resume-btn" class="bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-full hover:scale-105 transition-transform text-sm">
                         <i class="fas fa-download mr-2"></i>Resume
                     </a>
@@ -297,7 +288,7 @@
                     </button>
                 </div>
                 <div class="space-y-6">
-                    <a href="#home" class="mobile-nav-link block text-white hover:text-purple-400 transition-colors text-lg">Home</a>
+                    <a href="#home" id="home-nav-mobile" class="mobile-nav-link block text-white hover:text-purple-400 transition-colors text-lg hidden">Home</a>
                     <a href="#about" class="mobile-nav-link block text-white hover:text-purple-400 transition-colors text-lg">About</a>
                     <a href="#skills" class="mobile-nav-link block text-white hover:text-purple-400 transition-colors text-lg">Skills</a>
                     <a href="#education" class="mobile-nav-link block text-white hover:text-purple-400 transition-colors text-lg">Education</a>
@@ -622,18 +613,23 @@
                                 <a href="https://github.com/Sanjeevikumar038/QuizMaster" target="_blank" class="bg-white text-black p-2 sm:p-3 rounded-full hover:scale-110 transition-transform">
                                     <i class="fab fa-github text-sm sm:text-base"></i>
                                 </a>
-                                <button class="bg-white text-black p-2 sm:p-3 rounded-full hover:scale-110 transition-transform opacity-50 cursor-not-allowed">
+                                <a href="https://quizmastersk.netlify.app" target="_blank" class="bg-white text-black p-2 sm:p-3 rounded-full hover:scale-110 transition-transform">
                                     <i class="fas fa-external-link-alt text-sm sm:text-base"></i>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-center">Quiz Management System</h3>
-                    <p class="text-gray-400 mb-4 sm:mb-6 text-center text-xs sm:text-sm">A secure, interactive platform for educators to manage quizzes with automated quiz creation, instant scoring, and performance feedback.</p>
+                    <p class="text-gray-400 mb-3 sm:mb-4 text-center text-xs sm:text-sm">A secure, interactive platform for educators to manage quizzes with automated quiz creation, instant scoring, and performance feedback.</p>
+                    <div class="text-center mb-4">
+                        <a href="https://quizmaster-backend-m800.onrender.com/api/test" target="_blank" class="text-yellow-400 hover:text-yellow-300 text-xs underline">
+                            <i class="fas fa-server mr-1"></i>Wake up backend first
+                        </a>
+                    </div>
                     <div class="flex flex-wrap gap-1 sm:gap-2 justify-center">
-                        <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-2 sm:px-3 py-1 rounded-full text-xs">Spring Boot</span>
                         <span class="bg-blue-500 bg-opacity-20 text-blue-300 px-2 sm:px-3 py-1 rounded-full text-xs">React</span>
-                        <span class="bg-green-500 bg-opacity-20 text-green-300 px-2 sm:px-3 py-1 rounded-full text-xs">MySQL</span>
+                        <span class="bg-green-500 bg-opacity-20 text-green-300 px-2 sm:px-3 py-1 rounded-full text-xs">Spring Boot</span>
+                        <span class="bg-purple-500 bg-opacity-20 text-purple-300 px-2 sm:px-3 py-1 rounded-full text-xs">PostgreSQL</span>
                     </div>
                 </div>
 
@@ -755,7 +751,7 @@
     <!-- Footer -->
     <footer class="py-6 sm:py-8 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-            <p class="text-gray-400 text-sm sm:text-base">&copy; 2024 Sanjeevikumar D. All rights reserved.</p>
+            <p class="text-gray-400 text-sm sm:text-base">&copy; 2025 Sanjeevikumar D. All rights reserved.</p>
         </div>
     </footer>
 

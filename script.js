@@ -154,16 +154,17 @@ function initAnimations() {
     // Scroll-triggered animations
     gsap.utils.toArray('.reveal').forEach((element) => {
         gsap.fromTo(element, 
-            { opacity: 0, y: 50 },
+            { opacity: 0, y: 60, scale: 0.75 },
             {
                 opacity: 1,
                 y: 0,
-                duration: 1,
+                scale: 1,
+                duration: 0.8,
+                ease: 'elastic.out(1.2, 0.4)',
                 scrollTrigger: {
                     trigger: element,
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    toggleActions: 'play none none reverse'
+                    start: 'top 90%',
+                    toggleActions: 'play none none reset'
                 }
             }
         );
@@ -271,21 +272,17 @@ function initAnimations() {
     // Section title entrance animation
     gsap.utils.toArray('h2').forEach(title => {
         gsap.fromTo(title,
-            { 
-                opacity: 0,
-                y: 30,
-                scale: 0.8
-            },
+            { opacity: 0, y: 50, scale: 0.72 },
             {
                 opacity: 1,
                 y: 0,
                 scale: 1,
-                duration: 1.2,
-                ease: 'elastic.out(1, 0.5)',
+                duration: 0.75,
+                ease: 'elastic.out(1.3, 0.4)',
                 scrollTrigger: {
                     trigger: title,
-                    start: 'top 85%',
-                    toggleActions: 'play none none reverse'
+                    start: 'top 92%',
+                    toggleActions: 'play none none reset'
                 }
             }
         );
@@ -630,24 +627,7 @@ function requestTick() {
     }
 }
 
-// Intersection Observer for better performance
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-    });
-}, observerOptions);
-
-// Observe all reveal elements
-document.querySelectorAll('.reveal').forEach(el => {
-    observer.observe(el);
-});
 
 // Scroll progress indicator
 function createScrollProgress() {
@@ -789,45 +769,17 @@ function createFloatingParticles() {
 
 // Advanced text reveal animations
 function initTextRevealAnimations() {
-    // Stagger animation for skill tags
-    gsap.utils.toArray('.skills span, [class*="bg-"][class*="-500"]').forEach((tag, index) => {
-        gsap.fromTo(tag,
-            { opacity: 0, scale: 0, rotation: 180 },
-            {
-                opacity: 1,
-                scale: 1,
-                rotation: 0,
-                duration: 0.8,
-                delay: index * 0.1,
-                ease: 'elastic.out(1, 0.5)',
-                scrollTrigger: {
-                    trigger: tag,
-                    start: 'top 90%',
-                    toggleActions: 'play none none reverse'
-                }
-            }
-        );
-    });
-    
-    // Letter-by-letter animation for main title
+    // Letter-by-letter animation for main title only
     const mainTitle = document.querySelector('.typing');
     if (mainTitle) {
         const text = mainTitle.textContent;
         mainTitle.innerHTML = '';
-        
         [...text].forEach((letter, i) => {
             const span = document.createElement('span');
             span.textContent = letter === ' ' ? '\u00A0' : letter;
             span.style.opacity = '0';
             mainTitle.appendChild(span);
-            
-            gsap.to(span, {
-                opacity: 1,
-                y: 0,
-                duration: 0.1,
-                delay: i * 0.05,
-                ease: 'power2.out'
-            });
+            gsap.to(span, { opacity: 1, duration: 0.05, delay: i * 0.03, ease: 'power2.out' });
         });
     }
 }

@@ -35,6 +35,7 @@ A modern, futuristic single-page portfolio website showcasing the skills, projec
    - Enterprise-grade Academic ERP with AI mock interviews, WebRTC vision, coding sandbox, ATS resume analyzer, smart attendance, and virtual classrooms.
    - Technologies: React, Spring Boot, PostgreSQL, WebRTC
    - GitHub: https://github.com/Sanjeevikumar038/EduFlow-AI
+   - Live Demo: https://eduflowaiapp.netlify.app
 
 2. **Open Banking API Gateway**
    - Full-stack API gateway with JWT authentication, consent lifecycle management, analytics dashboard, request logging, rate limiting, Swagger docs, and Docker deployment.

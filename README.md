@@ -1,4 +1,4 @@
-# Sanjeevikumar D — Portfolio
+﻿# Sanjeevikumar D — Portfolio
 
 A modern, futuristic single-page portfolio website showcasing the skills, projects, certifications, and contact details of Sanjeevikumar D.
 
@@ -11,7 +11,8 @@ A modern, futuristic single-page portfolio website showcasing the skills, projec
 - **Home / Hero** — Name, role, "Open to Internship Opportunities" badge, and call-to-action buttons
 - **About** — Personal summary, IV M.Tech CSE, counters (4+ certifications, 7+ projects), profile photo
 - **Skills** — Programming, Frameworks & Backend, AI & Data, Tools & Database
-- **Education & Certifications** — Academic background and 4 professional certifications with Google Drive links
+- **Education** — Academic background and professional certifications
+- **Internship Experience** — A dedicated section and navigation link for the Infosys Springboard Internship 7.0 (B2)
 - **Projects** — 9 featured projects with GitHub and live demo links
 - **Contact** — Email, phone, location, social links, and direct reach-out buttons
 
@@ -98,6 +99,13 @@ A modern, futuristic single-page portfolio website showcasing the skills, projec
 | Data Structures & Algorithms Using Java | Infosys Springboard | 2024 |
 | Data Analytics | NoviTech R&D Pvt Ltd | 2025 |
 | Python 101 for Data Science | IBM | 2024 |
+
+## Internship Experience
+
+**AI-Powered Renewable Energy Site Selection and Deployment Intelligence Platform**  
+Infosys Springboard Internship 7.0 (B2) · July 15 - September 20, 2026
+
+Completed the mandatory assignment for an AI-powered platform focused on renewable energy site selection and deployment intelligence. [View the internship certificate](https://drive.google.com/file/d/1yBaey28dLrfATImiqThWPesXUYSlZiJ7/view?usp=sharing).
 
 ---
 
